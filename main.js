@@ -433,3 +433,122 @@ document.querySelectorAll('.project-card').forEach(card=>{
 // 14. FOOTER YEAR
 // ============================================================
 document.getElementById('year').textContent = new Date().getFullYear();
+
+
+// ============================================================
+// 15. LOCAL → EKS DEPLOY TERMINAL
+// ============================================================
+(function () {
+  const c = document.getElementById('deploy-terminal-lines');
+  if (!c) return;
+
+  const script = [
+    {t:'cmd', s:'docker-compose up -d'},
+    {t:'out', s:'Starting api        ... done'},
+    {t:'out', s:'Starting postgres   ... done'},
+    {t:'out', s:'Starting redis      ... done'},
+    {t:'ok',  s:'✓ Local stack ready at http://localhost:3000'},
+    {t:'p', ms:600},
+    {t:'cmd', s:'git add . && git commit -m "feat: add payment retry logic"'},
+    {t:'out', s:'[feature/payment-retry a3f9c1d] feat: add payment retry logic'},
+    {t:'cmd', s:'git push origin feature/payment-retry'},
+    {t:'ok',  s:'✓ GitHub Actions triggered'},
+    {t:'p', ms:500},
+    {t:'cmd', s:'# GitHub Actions: trivy scan running...'},
+    {t:'warn', s:'[trivy] Scanning image layers...'},
+    {t:'ok',  s:'[trivy] 0 CRITICAL, 0 HIGH — gate passed ✓'},
+    {t:'p', ms:400},
+    {t:'cmd', s:'docker build -t myapp:a3f9c1d . && docker push ECR'},
+    {t:'out', s:'Step 8/12: RUN npm ci --production'},
+    {t:'ok',  s:'✓ Pushed to 123456.dkr.ecr.ap-southeast-1.amazonaws.com'},
+    {t:'p', ms:400},
+    {t:'cmd', s:'kubectl set image deploy/api api=myapp:a3f9c1d -n production'},
+    {t:'out', s:'deployment.apps/api image updated'},
+    {t:'cmd', s:'kubectl rollout status deploy/api -n production'},
+    {t:'out', s:'Waiting for rollout... 1/3 updated'},
+    {t:'out', s:'Waiting for rollout... 2/3 updated'},
+    {t:'out', s:'Waiting for rollout... 3/3 updated'},
+    {t:'ok',  s:'🎉 Deployment complete — zero downtime'},
+    {t:'p', ms:400},
+    {t:'cmd', s:'curl -sf https://api.prod/health | jq .status'},
+    {t:'ok',  s:'"healthy"'},
+  ];
+
+  let idx = 0;
+  function addLine(type, text) {
+    const p = document.createElement('p'); p.className = 'tl';
+    if (type === 'cmd') {
+      const pr = document.createElement('span'); pr.className = 'tl-prompt'; pr.textContent = '$';
+      const cm = document.createElement('span'); cm.className = 'tl-cmd';
+      p.appendChild(pr); p.appendChild(cm); c.appendChild(p); c.scrollTop = c.scrollHeight;
+      let ci = 0;
+      return new Promise(res => { const iv = setInterval(() => { cm.textContent += text[ci++]; if (ci >= text.length) { clearInterval(iv); setTimeout(res, 80); } }, 24); });
+    } else {
+      const sp = document.createElement('span');
+      sp.className = type === 'ok' ? 'tl-ok' : type === 'warn' ? 'tl-warn' : type === 'err' ? 'tl-err' : 'tl-out';
+      sp.textContent = text; p.appendChild(sp); c.appendChild(p); c.scrollTop = c.scrollHeight;
+      return Promise.resolve();
+    }
+  }
+
+  async function run() {
+    c.innerHTML = ''; idx = 0;
+    while (idx < script.length) {
+      const s = script[idx++];
+      if (s.t === 'p') { await new Promise(r => setTimeout(r, s.ms)); }
+      else { await addLine(s.t, s.s); await new Promise(r => setTimeout(r, s.t === 'cmd' ? 140 : 60)); }
+    }
+    await new Promise(r => setTimeout(r, 4000));
+    run();
+  }
+
+  // start when section visible
+  let ran = false;
+  const sec = document.getElementById('local-deploy');
+  if (sec) {
+    new IntersectionObserver(e => { if (e[0].isIntersecting && !ran) { ran = true; setTimeout(run, 300); } }, { threshold: 0.2 })
+      .observe(sec);
+  }
+})();
+
+
+// ============================================================
+// 16. COST SAVINGS BAR ANIMATION
+// ============================================================
+(function () {
+  const fill = document.getElementById('ts-fill');
+  const pct  = document.getElementById('ts-pct');
+  if (!fill) return;
+
+  const obs = new IntersectionObserver(e => {
+    if (e[0].isIntersecting) {
+      setTimeout(() => {
+        fill.style.width = '60%';
+        let cur = 0;
+        const iv = setInterval(() => {
+          cur = Math.min(cur + 1, 60);
+          if (pct) pct.textContent = cur + '%';
+          if (cur >= 60) clearInterval(iv);
+        }, 33);
+      }, 400);
+      obs.disconnect();
+    }
+  }, { threshold: 0.3 });
+
+  const sec = document.getElementById('cost');
+  if (sec) obs.observe(sec);
+})();
+
+
+// ============================================================
+// 17. ANIMATED TRACE LATENCY FLUCTUATION
+// ============================================================
+(function () {
+  const el = document.getElementById('trace-latency');
+  if (!el) return;
+  setInterval(() => {
+    const v = Math.floor(Math.random() * 40 + 120);
+    el.textContent = v + 'ms';
+    el.style.color = v > 150 ? '#d29922' : '#58a6ff';
+  }, 3000);
+})();

@@ -24,7 +24,9 @@
       <li><a href="#about">About</a></li>
       <li><a href="#skills">Stack</a></li>
       <li><a href="#pipeline">Pipeline</a></li>
-      <li><a href="#k8s">Kubernetes</a></li>
+      <li><a href="#aws-infra">AWS</a></li>
+      <li><a href="#local-deploy">Local Deploy</a></li>
+      <li><a href="#cost">Cost</a></li>
       <li><a href="#monitoring">Monitoring</a></li>
       <li><a href="#experience">Experience</a></li>
       <li><a href="#projects">Projects</a></li>
@@ -496,89 +498,327 @@
 </section>
 
 <!-- =====================================================
-     KUBERNETES POD TOPOLOGY
+     AWS INFRASTRUCTURE
 ===================================================== -->
-<section id="k8s">
+<section id="aws-infra">
   <div class="container">
     <div class="section-header">
       <span class="section-tag">04</span>
-      <h2>Kubernetes Cluster</h2>
+      <h2>AWS Infrastructure</h2>
       <div class="section-line"></div>
     </div>
-    <p class="section-sub">Live visualisation of the EKS production topology I manage — nodes, namespaces, and pod health.</p>
+    <p class="section-sub">Production-grade AWS infrastructure I designed and deployed — multi-region, multi-tier, fully managed with Terraform.</p>
 
-    <div class="k8s-wrapper reveal">
-      <!-- Cluster header -->
-      <div class="k8s-cluster-bar">
-        <svg viewBox="0 0 32 32" fill="#326CE5" width="18" height="18"><path d="M16 1.7l-14 7.5v13.6l14 7.5 14-7.5V9.2L16 1.7zm0 2.2l11.7 6.3-4.3 2.3-7.4-4-7.4 4L4.3 10.2 16 3.9zm-12 8l4.6 2.5v5L4 22V11.9zm13.3 7v5.3L12 27.1V21.9l5.3-2.8zm1.4 0l5.3 2.8v5.2l-5.3 2.9v-5.3l.1-.1-.1-5.5zm6.7-1.5v4.7l-4.6 2.5V17l4.6-2.6zM16 11.2l4.3 2.3L16 16l-4.3-2.5 4.3-2.3z"/></svg>
-        <span class="k8s-cluster-name">eks-prod · ap-southeast-1</span>
-        <span class="k8s-badge ok">● Healthy</span>
-        <span class="k8s-version">v1.29</span>
+    <div class="aws-simple-grid reveal">
+
+      <!-- What I build -->
+      <div class="local-card">
+        <div class="local-card-header">
+          <svg viewBox="0 0 24 24" fill="#FF9900" width="22" height="22"><path d="M6.6 11.1c0 .3.1.6.2.8l.3.5c0 .1.1.2.1.3 0 .2-.1.3-.4.5-.3.2-.6.3-1 .3-.4 0-.6-.1-.9-.4a2.3 2.3 0 0 1-.7-1.7c0-.7.3-1.4.7-1.8.5-.5 1.1-.7 1.8-.7.4 0 .7.1 1 .3.3.2.4.4.4.7s-.1.5-.3.6c-.2.2-.3.3-.3.4s0 .2.1.3zm7.3 0c0 .3.1.6.2.8l.3.5c0 .1.1.2.1.3 0 .2-.1.3-.4.5-.3.2-.6.3-1 .3-.4 0-.6-.1-.9-.4a2.3 2.3 0 0 1-.7-1.7c0-.7.3-1.4.7-1.8.5-.5 1.1-.7 1.8-.7.4 0 .7.1 1 .3.3.2.4.4.4.7s-.1.5-.3.6c-.2.2-.3.3-.3.4s0 .2.1.3zM12 16.5c-2.3 0-4.1-.9-5.5-2.8h11c-1.4 1.9-3.2 2.8-5.5 2.8z"/></svg>
+          <h3>What I build on AWS</h3>
+        </div>
+        <ul class="local-list">
+          <li>VPC with public and private subnets across multiple Availability Zones for fault tolerance</li>
+          <li>EKS clusters for running containerised workloads with Auto Scaling node groups</li>
+          <li>RDS PostgreSQL with Multi-AZ failover and SSL enforcement</li>
+          <li>Application Load Balancer with HTTPS, WAF rules, and health checks</li>
+          <li>S3 buckets for artifact storage, scan reports, and static assets with lifecycle policies</li>
+          <li>All provisioned and version-controlled with Terraform — no manual clicking</li>
+        </ul>
       </div>
 
-      <!-- Node grid -->
-      <div class="k8s-nodes">
-        <div class="k8s-node">
-          <div class="k8s-node-header">
-            <span class="node-icon">🖥</span>
+      <!-- Services used -->
+      <div class="local-card">
+        <div class="local-card-header">
+          <span class="local-icon">🗂️</span>
+          <h3>Services I work with</h3>
+        </div>
+        <div class="aws-services-grid">
+          <div class="aws-svc"><span class="aws-svc-name">EC2</span><span class="aws-svc-desc">Compute</span></div>
+          <div class="aws-svc"><span class="aws-svc-name">EKS</span><span class="aws-svc-desc">Kubernetes</span></div>
+          <div class="aws-svc"><span class="aws-svc-name">RDS</span><span class="aws-svc-desc">PostgreSQL / MySQL</span></div>
+          <div class="aws-svc"><span class="aws-svc-name">VPC</span><span class="aws-svc-desc">Networking</span></div>
+          <div class="aws-svc"><span class="aws-svc-name">ALB</span><span class="aws-svc-desc">Load Balancer</span></div>
+          <div class="aws-svc"><span class="aws-svc-name">S3</span><span class="aws-svc-desc">Object Storage</span></div>
+          <div class="aws-svc"><span class="aws-svc-name">ECR</span><span class="aws-svc-desc">Container Registry</span></div>
+          <div class="aws-svc"><span class="aws-svc-name">IAM</span><span class="aws-svc-desc">Access Control</span></div>
+          <div class="aws-svc"><span class="aws-svc-name">Route 53</span><span class="aws-svc-desc">DNS</span></div>
+          <div class="aws-svc"><span class="aws-svc-name">ASG</span><span class="aws-svc-desc">Auto Scaling</span></div>
+          <div class="aws-svc"><span class="aws-svc-name">ACM</span><span class="aws-svc-desc">SSL Certs</span></div>
+          <div class="aws-svc"><span class="aws-svc-name">CloudWatch</span><span class="aws-svc-desc">Logs &amp; Alerts</span></div>
+          <div class="aws-svc"><span class="aws-svc-name">SSM</span><span class="aws-svc-desc">Param Store / Session</span></div>
+          <div class="aws-svc"><span class="aws-svc-name">Lambda</span><span class="aws-svc-desc">Serverless Functions</span></div>
+          <div class="aws-svc"><span class="aws-svc-name">API Gateway</span><span class="aws-svc-desc">REST / HTTP APIs</span></div>
+          <div class="aws-svc"><span class="aws-svc-name">AWS Config</span><span class="aws-svc-desc">Compliance &amp; Audit</span></div>
+          <div class="aws-svc"><span class="aws-svc-name">WAF</span><span class="aws-svc-desc">Web App Firewall</span></div>
+          <div class="aws-svc"><span class="aws-svc-name">Secrets Manager</span><span class="aws-svc-desc">Secrets &amp; Rotation</span></div>
+          <div class="aws-svc"><span class="aws-svc-name">ELB</span><span class="aws-svc-desc">Classic LB</span></div>
+          <div class="aws-svc"><span class="aws-svc-name">SNS / SQS</span><span class="aws-svc-desc">Messaging</span></div>
+          <div class="aws-svc"><span class="aws-svc-name">CloudTrail</span><span class="aws-svc-desc">API Audit Logs</span></div>
+          <div class="aws-svc"><span class="aws-svc-name">Elastic IP</span><span class="aws-svc-desc">Static IPs</span></div>
+        </div>
+      </div>
+
+      <!-- Regions + key facts -->
+      <div class="local-card local-card-wide">
+        <div class="local-card-header">
+          <span class="local-icon">🌏</span>
+          <h3>Production deployments</h3>
+        </div>
+        <div class="local-why-grid">
+          <div class="why-item">
+            <span class="why-icon">📍</span>
             <div>
-              <div class="node-name">eks-prod-node-1</div>
-              <div class="node-meta">m5.xlarge · Ready</div>
+              <strong>Multi-Region</strong>
+              <p>Deployed production workloads across Singapore (ap-southeast-1) and UAE (me-central-1) for a fintech SaaS platform.</p>
             </div>
-            <span class="node-badge running">Ready</span>
           </div>
-          <div class="node-resources">
-            <div class="res-row"><span class="res-label">CPU</span><div class="res-bar"><div class="res-fill cpu-fill" style="width:68%"></div></div><span class="res-val">68%</span></div>
-            <div class="res-row"><span class="res-label">MEM</span><div class="res-bar"><div class="res-fill mem-fill" style="width:54%"></div></div><span class="res-val">54%</span></div>
-          </div>
-          <div class="pod-grid">
-            <div class="pod running" title="api-deployment-v2 · Running"><span class="pod-dot"></span>api</div>
-            <div class="pod running" title="auth-svc · Running"><span class="pod-dot"></span>auth</div>
-            <div class="pod running" title="nginx-ingress · Running"><span class="pod-dot"></span>nginx</div>
-            <div class="pod running" title="prometheus · Running"><span class="pod-dot"></span>prom</div>
-            <div class="pod running" title="grafana · Running"><span class="pod-dot"></span>grafana</div>
-            <div class="pod pending" title="worker-job · Pending"><span class="pod-dot"></span>worker</div>
-          </div>
-        </div>
-
-        <div class="k8s-node">
-          <div class="k8s-node-header">
-            <span class="node-icon">🖥</span>
+          <div class="why-item">
+            <span class="why-icon">🏗️</span>
             <div>
-              <div class="node-name">eks-prod-node-2</div>
-              <div class="node-meta">m5.xlarge · Ready</div>
+              <strong>Infrastructure as Code</strong>
+              <p>Every AWS resource is defined in Terraform. No manual console changes — full audit trail, easy to recreate.</p>
             </div>
-            <span class="node-badge running">Ready</span>
           </div>
-          <div class="node-resources">
-            <div class="res-row"><span class="res-label">CPU</span><div class="res-bar"><div class="res-fill cpu-fill" style="width:41%"></div></div><span class="res-val">41%</span></div>
-            <div class="res-row"><span class="res-label">MEM</span><div class="res-bar"><div class="res-fill mem-fill" style="width:72%"></div></div><span class="res-val">72%</span></div>
+          <div class="why-item">
+            <span class="why-icon">📈</span>
+            <div>
+              <strong>Auto Scaling</strong>
+              <p>EC2 Auto Scaling Groups and EKS HPA handle traffic spikes automatically without manual intervention.</p>
+            </div>
           </div>
-          <div class="pod-grid">
-            <div class="pod running" title="payment-svc · Running"><span class="pod-dot"></span>payment</div>
-            <div class="pod running" title="db-proxy · Running"><span class="pod-dot"></span>db-proxy</div>
-            <div class="pod running" title="redis · Running"><span class="pod-dot"></span>redis</div>
-            <div class="pod running" title="trivy-scanner · Running"><span class="pod-dot"></span>trivy</div>
-            <div class="pod terminated" title="old-deploy · Terminated"><span class="pod-dot"></span>old-v1</div>
-            <div class="pod running" title="cert-manager · Running"><span class="pod-dot"></span>cert-mgr</div>
+          <div class="why-item">
+            <span class="why-icon">🔒</span>
+            <div>
+              <strong>Security first</strong>
+              <p>Private subnets for app and DB tiers, IAM least-privilege, SSL everywhere, WAF on the ALB.</p>
+            </div>
           </div>
         </div>
+      </div>
 
-        <!-- Namespace summary card -->
-        <div class="k8s-namespaces">
-          <div class="ns-header">Namespaces</div>
-          <div class="ns-row"><span class="ns-name">production</span><span class="ns-pods">9 pods</span><span class="ns-status ok">●</span></div>
-          <div class="ns-row"><span class="ns-name">monitoring</span><span class="ns-pods">3 pods</span><span class="ns-status ok">●</span></div>
-          <div class="ns-row"><span class="ns-name">security</span><span class="ns-pods">2 pods</span><span class="ns-status ok">●</span></div>
-          <div class="ns-row"><span class="ns-name">ingress-nginx</span><span class="ns-pods">1 pod</span><span class="ns-status ok">●</span></div>
-          <div class="ns-row"><span class="ns-name">kube-system</span><span class="ns-pods">6 pods</span><span class="ns-status ok">●</span></div>
+    </div>
+  </div>
+</section>
 
-          <div class="ns-divider"></div>
-          <div class="ns-header" style="margin-top:12px">Services</div>
-          <div class="ns-row"><span class="ns-name">api-svc</span><span class="ns-type">LoadBalancer</span><span class="ns-status ok">●</span></div>
-          <div class="ns-row"><span class="ns-name">auth-svc</span><span class="ns-type">ClusterIP</span><span class="ns-status ok">●</span></div>
-          <div class="ns-row"><span class="ns-name">payment-svc</span><span class="ns-type">ClusterIP</span><span class="ns-status ok">●</span></div>
+<!-- =====================================================
+     LOCAL DOCKER DEPLOYMENT
+===================================================== -->
+<section id="local-deploy">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-tag">05</span>
+      <h2>Local Docker Deployment</h2>
+      <div class="section-line"></div>
+    </div>
+    <p class="section-sub">Deployed 50–60 containers on a local server using Docker Compose for a client project hosted on Huawei Cloud — no public internet, air-gapped environment.</p>
+
+    <div class="local-deploy-grid reveal">
+
+      <!-- What I do card -->
+      <div class="local-card">
+        <div class="local-card-header">
+          <span class="local-icon">🐳</span>
+          <h3>What I did</h3>
         </div>
+        <ul class="local-list">
+          <li>Deployed <strong>50–60 containers</strong> on a local Huawei Cloud server using Docker Compose — no public internet access</li>
+          <li>Wrote and maintained <code>docker-compose.yml</code> files defining all services — APIs, databases, message queues, reverse proxies — in one place</li>
+          <li>Built custom <code>Dockerfile</code>s with multi-stage builds to keep images lean and consistent across environments</li>
+          <li>Configured Docker networks and named volumes so services communicate internally and data persists across restarts</li>
+          <li>Managed the full lifecycle — image updates, rolling restarts, log tailing, and troubleshooting container issues on the server</li>
+        </ul>
+      </div>
+
+      <!-- Stack example card -->
+      <div class="local-card">
+        <div class="local-card-header">
+          <span class="local-icon">📦</span>
+          <h3>Typical service stack</h3>
+        </div>
+        <div class="local-stack-row">
+          <div class="local-service">
+            <svg viewBox="0 0 24 17" fill="#2496ED" width="20" height="14"><rect x="0" y="6" width="3" height="3"/><rect x="4" y="6" width="3" height="3"/><rect x="8" y="6" width="3" height="3"/><rect x="8" y="3" width="3" height="3"/><rect x="12" y="6" width="3" height="3"/><rect x="12" y="3" width="3" height="3"/><rect x="4" y="3" width="3" height="3"/></svg>
+            <span>app</span>
+            <span class="svc-port">:3000</span>
+          </div>
+          <div class="local-service">
+            <svg viewBox="0 0 24 24" fill="#009639" width="16" height="16"><path d="M12 2L2 19.5h20L12 2zm0 3.5L19.5 18h-15L12 5.5z"/></svg>
+            <span>nginx</span>
+            <span class="svc-port">:80</span>
+          </div>
+          <div class="local-service">
+            <svg viewBox="0 0 24 24" fill="#3F8EF7" width="16" height="16"><ellipse cx="12" cy="7" rx="8" ry="3" fill="none" stroke="#3F8EF7" stroke-width="1.5"/><path d="M4 7v10c0 1.7 3.6 3 8 3s8-1.3 8-3V7" fill="none" stroke="#3F8EF7" stroke-width="1.5"/></svg>
+            <span>postgres</span>
+            <span class="svc-port">:5432</span>
+          </div>
+          <div class="local-service">
+            <svg viewBox="0 0 24 24" fill="#DC382D" width="16" height="16"><path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10 10-4.5 10-10S17.5 2 12 2zm0 16c-3.3 0-6-2.7-6-6s2.7-6 6-6 6 2.7 6 6-2.7 6-6 6z" fill="none" stroke="#DC382D" stroke-width="1.5"/><circle cx="12" cy="12" r="3" fill="#DC382D"/></svg>
+            <span>redis</span>
+            <span class="svc-port">:6379</span>
+          </div>
+          <div class="local-service">
+            <span>🐇</span>
+            <span>rabbitmq</span>
+            <span class="svc-port">:5672</span>
+          </div>
+          <div class="local-service">
+            <span>🔍</span>
+            <span>elasticsearch</span>
+            <span class="svc-port">:9200</span>
+          </div>
+        </div>
+        <div class="local-terminal-mini">
+          <span class="tl-prompt">$</span>
+          <span class="tl-cmd">docker-compose up -d --scale worker=4</span>
+          <br>
+          <span class="tl-ok">✓ Starting nginx          ... done</span>
+          <br>
+          <span class="tl-ok">✓ Starting api            ... done</span>
+          <br>
+          <span class="tl-ok">✓ Starting worker_1 ... done</span>
+          <br>
+          <span class="tl-ok">✓ Starting worker_2 ... done</span>
+          <br>
+          <span class="tl-out">... 54 containers total running</span>
+        </div>
+        <div class="local-meta-row">
+          <span class="local-meta-badge">☁️ Huawei Cloud</span>
+          <span class="local-meta-badge">🔒 Air-gapped</span>
+          <span class="local-meta-badge">📦 50–60 containers</span>
+          <span class="local-meta-badge">🐳 Docker Compose</span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- =====================================================
+     COST OPTIMISATION
+===================================================== -->
+<section id="cost">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-tag">07</span>
+      <h2>Cost Optimisation</h2>
+      <div class="section-line"></div>
+    </div>
+    <p class="section-sub">Real infrastructure cost-cutting wins — right-sizing, Spot instances, S3 lifecycle policies, and reserved capacity planning.</p>
+
+    <div class="cost-grid">
+      <!-- Before/After cards -->
+      <div class="cost-card reveal">
+        <div class="cost-card-header">
+          <span class="cost-icon">🖥️</span>
+          <h3>EC2 Right-Sizing</h3>
+        </div>
+        <div class="cost-compare">
+          <div class="cost-before">
+            <div class="cb-label">Before</div>
+            <div class="cb-value danger-val">m5.2xlarge × 4</div>
+            <div class="cb-price">~$580/mo</div>
+          </div>
+          <div class="cost-arrow-right">→</div>
+          <div class="cost-after">
+            <div class="ca-label">After</div>
+            <div class="ca-value green-val">m5.xlarge × 2 + Spot</div>
+            <div class="ca-price green-val">~$210/mo</div>
+          </div>
+        </div>
+        <div class="cost-saving">
+          <span class="saving-badge">↓ 64% saved</span>
+          <span class="saving-note">Auto Scaling handles peak load</span>
+        </div>
+      </div>
+
+      <div class="cost-card reveal">
+        <div class="cost-card-header">
+          <span class="cost-icon">🗄️</span>
+          <h3>S3 Lifecycle Policy</h3>
+        </div>
+        <div class="cost-compare">
+          <div class="cost-before">
+            <div class="cb-label">Before</div>
+            <div class="cb-value danger-val">All Standard Storage</div>
+            <div class="cb-price">~$140/mo</div>
+          </div>
+          <div class="cost-arrow-right">→</div>
+          <div class="cost-after">
+            <div class="ca-label">After</div>
+            <div class="ca-value green-val">IA after 30d · Glacier 90d</div>
+            <div class="ca-price green-val">~$38/mo</div>
+          </div>
+        </div>
+        <div class="cost-saving">
+          <span class="saving-badge">↓ 73% saved</span>
+          <span class="saving-note">Lifecycle rules via Terraform</span>
+        </div>
+      </div>
+
+      <div class="cost-card reveal">
+        <div class="cost-card-header">
+          <span class="cost-icon">☸️</span>
+          <h3>EKS Node Optimisation</h3>
+        </div>
+        <div class="cost-compare">
+          <div class="cost-before">
+            <div class="cb-label">Before</div>
+            <div class="cb-value danger-val">4 nodes always-on</div>
+            <div class="cb-price">~$480/mo</div>
+          </div>
+          <div class="cost-arrow-right">→</div>
+          <div class="cost-after">
+            <div class="ca-label">After</div>
+            <div class="ca-value green-val">2 On-Demand + HPA</div>
+            <div class="ca-price green-val">~$220/mo</div>
+          </div>
+        </div>
+        <div class="cost-saving">
+          <span class="saving-badge">↓ 54% saved</span>
+          <span class="saving-note">HPA scales on CPU/mem metrics</span>
+        </div>
+      </div>
+
+      <div class="cost-card reveal">
+        <div class="cost-card-header">
+          <span class="cost-icon">🗃️</span>
+          <h3>RDS Reserved Instances</h3>
+        </div>
+        <div class="cost-compare">
+          <div class="cost-before">
+            <div class="cb-label">Before</div>
+            <div class="cb-value danger-val">On-Demand db.t3.medium</div>
+            <div class="cb-price">~$95/mo</div>
+          </div>
+          <div class="cost-arrow-right">→</div>
+          <div class="cost-after">
+            <div class="ca-label">After</div>
+            <div class="ca-value green-val">1yr Reserved + Multi-AZ</div>
+            <div class="ca-price green-val">~$52/mo</div>
+          </div>
+        </div>
+        <div class="cost-saving">
+          <span class="saving-badge">↓ 45% saved</span>
+          <span class="saving-note">Committed use + HA failover</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Total savings bar -->
+    <div class="total-savings reveal">
+      <div class="ts-label">Total Monthly Infrastructure Savings</div>
+      <div class="ts-bar-wrap">
+        <div class="ts-bar-bg">
+          <div class="ts-bar-fill" id="ts-fill" style="width:0%"></div>
+        </div>
+        <span class="ts-pct" id="ts-pct">0%</span>
+      </div>
+      <div class="ts-numbers">
+        <span class="ts-before">$1,295/mo before</span>
+        <span class="ts-arrow">→</span>
+        <span class="ts-after green-val">$520/mo after</span>
+        <span class="saving-badge large">↓ ~60% overall</span>
       </div>
     </div>
   </div>
@@ -590,7 +830,7 @@
 <section id="monitoring">
   <div class="container">
     <div class="section-header">
-      <span class="section-tag">05</span>
+      <span class="section-tag">08</span>
       <h2>Monitoring Dashboard</h2>
       <div class="section-line"></div>
     </div>
@@ -669,7 +909,7 @@
 <section id="experience">
   <div class="container">
     <div class="section-header">
-      <span class="section-tag">06</span>
+      <span class="section-tag">09</span>
       <h2>Experience</h2>
       <div class="section-line"></div>
     </div>
@@ -735,7 +975,7 @@
 <section id="projects">
   <div class="container">
     <div class="section-header">
-      <span class="section-tag">07</span>
+      <span class="section-tag">10</span>
       <h2>Key Projects</h2>
       <div class="section-line"></div>
     </div>
@@ -807,7 +1047,7 @@
 <section id="education">
   <div class="container">
     <div class="section-header">
-      <span class="section-tag">08</span>
+      <span class="section-tag">11</span>
       <h2>Education</h2>
       <div class="section-line"></div>
     </div>
@@ -829,7 +1069,7 @@
 <section id="contact">
   <div class="container">
     <div class="section-header">
-      <span class="section-tag">09</span>
+      <span class="section-tag">12</span>
       <h2>Get In Touch</h2>
       <div class="section-line"></div>
     </div>
