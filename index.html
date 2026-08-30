@@ -1,0 +1,875 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Rimon Shil | DevOps Engineer</title>
+  <meta name="description" content="DevOps Engineer with 4+ years of experience in AWS, Kubernetes, CI/CD, and DevSecOps." />
+  <link rel="stylesheet" href="style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+</head>
+<body>
+
+<!-- Particle network background -->
+<canvas id="particles-canvas"></canvas>
+
+<!-- =====================================================
+     NAVBAR
+===================================================== -->
+<nav id="navbar">
+  <div class="nav-inner">
+    <a href="#hero" class="nav-logo">rimon<span>.sh</span></a>
+    <ul class="nav-links">
+      <li><a href="#about">About</a></li>
+      <li><a href="#skills">Stack</a></li>
+      <li><a href="#pipeline">Pipeline</a></li>
+      <li><a href="#k8s">Kubernetes</a></li>
+      <li><a href="#monitoring">Monitoring</a></li>
+      <li><a href="#experience">Experience</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+    <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<!-- =====================================================
+     HERO
+===================================================== -->
+<section id="hero">
+  <div class="hero-bg">
+    <div class="grid-lines"></div>
+    <div class="glow-blob glow-blue"></div>
+    <div class="glow-blob glow-green"></div>
+    <div class="glow-blob glow-purple"></div>
+  </div>
+
+  <!-- Floating SVG tool icons -->
+  <div class="floating-tools" aria-hidden="true">
+    <!-- Docker -->
+    <div class="ftool ftool-1">
+      <svg viewBox="0 0 24 24" fill="#2496ED"><path d="M13.5 5.5h2v2h-2zm-3 0h2v2h-2zm-3 0h2v2h-2zm6 3h2v2h-2zm-3 0h2v2h-2zm-3 0h2v2h-2zm-3 0h2v2h-2zm15-1.5s-.8-2.3-2.7-2.3c-.3-2.7-3.5-4-5.8-2.7-.6-1.2-2-1.9-3.4-1.7C9 1 7.7 2.5 7.5 4.2c-1.8.1-3 1.5-3 3.3 0 .1 0 .2.1.3H4c-.8 0-1.5.7-1.5 1.5v3h15V9c1.8-.1 2.9-1.1 3-3z"/></svg>
+      Docker
+    </div>
+    <!-- Kubernetes -->
+    <div class="ftool ftool-2">
+      <svg viewBox="0 0 24 24" fill="#326CE5"><path d="M12 .5a1.5 1.5 0 0 0-.6.1L3.5 4.3A1.5 1.5 0 0 0 2.5 5.7v12.6a1.5 1.5 0 0 0 1 1.4l7.9 3.7a1.5 1.5 0 0 0 1.2 0l7.9-3.7a1.5 1.5 0 0 0 1-1.4V5.7a1.5 1.5 0 0 0-1-1.4L12.6.6A1.5 1.5 0 0 0 12 .5zM12 2l7 3.3v.2L12 8.7 5 5.5V5.3L12 2zm-8 5l7 3.3V19l-7-3.3V7zm16 0v8.7L13 19V10.3l7-3.3z"/></svg>
+      K8s
+    </div>
+    <!-- Terraform -->
+    <div class="ftool ftool-3">
+      <svg viewBox="0 0 24 24" fill="#7B42BC"><path d="M1.5 4.5l6 3.5v7L1.5 11.5V4.5zm7.5 0l5.5 3.2v7L9 15.2V4.5zm7.5 4.3l6 3.5v7l-6-3.5v-7zM9 .5L15.5 4v7L9 7.5V.5z"/></svg>
+      Terraform
+    </div>
+    <!-- AWS -->
+    <div class="ftool ftool-4">
+      <svg viewBox="0 0 24 24" fill="#FF9900"><path d="M6.8 10.8c0 .4.1.7.2 1l.3.5c.1.1.1.2.1.3 0 .1-.1.2-.3.4-.4.3-.8.5-1.3.5-.5 0-.8-.1-1.1-.4A2.5 2.5 0 0 1 4 11c0-.9.3-1.6.8-2.1A2.8 2.8 0 0 1 7 8c.5 0 .9.1 1.2.3.3.2.4.5.4.8s-.1.5-.3.7c-.2.2-.3.3-.3.4s0 .2.1.3l.1.3zm8.4 0c0 .4.1.7.2 1l.3.5.1.3c0 .1-.1.2-.3.4-.4.3-.8.5-1.3.5-.5 0-.8-.1-1.1-.4-.3-.3-.5-.6-.7-1-.1-.4-.2-.8-.2-1.2 0-.9.3-1.6.8-2.1A2.8 2.8 0 0 1 15 8c.5 0 .9.1 1.2.3.3.2.4.5.4.8s-.1.5-.3.7c-.2.2-.3.3-.3.4s0 .2.1.3l.1.3zM12 16c-2.5 0-4.5-1-6-3h12c-1.5 2-3.5 3-6 3z"/></svg>
+      AWS
+    </div>
+    <!-- GitHub Actions -->
+    <div class="ftool ftool-5">
+      <svg viewBox="0 0 24 24" fill="#2088FF"><path d="M12 1C5.9 1 1 5.9 1 12c0 4.9 3.1 9 7.5 10.5.5.1.7-.2.7-.5v-1.7c-3 .6-3.6-1.4-3.6-1.4-.5-1.2-1.2-1.5-1.2-1.5-1-.7.1-.7.1-.7 1.1.1 1.6 1.1 1.6 1.1 1 1.6 2.5 1.2 3.1.9.1-.7.4-1.2.7-1.4-2.4-.3-4.9-1.2-4.9-5.3 0-1.2.4-2.1 1.1-2.9-.1-.3-.5-1.4.1-2.9 0 0 .9-.3 3 1.1a10.4 10.4 0 0 1 5.5 0c2.1-1.4 3-1.1 3-1.1.6 1.5.2 2.6.1 2.9.7.8 1.1 1.7 1.1 2.9 0 4.1-2.5 5-4.9 5.3.4.3.7 1 .7 2v3c0 .3.2.6.7.5C19.9 21 23 16.9 23 12c0-6.1-4.9-11-11-11z"/></svg>
+      GH Actions
+    </div>
+    <!-- Prometheus -->
+    <div class="ftool ftool-6">
+      <svg viewBox="0 0 24 24" fill="#E6522C"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm-1-13h2v6h-2zm0 8h2v2h-2z"/></svg>
+      Prometheus
+    </div>
+    <!-- Grafana -->
+    <div class="ftool ftool-7">
+      <svg viewBox="0 0 24 24" fill="#F46800"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 3l3 5H9l3-5zm0 12l-3-5h6l-3 5z"/></svg>
+      Grafana
+    </div>
+    <!-- Nginx -->
+    <div class="ftool ftool-8">
+      <svg viewBox="0 0 24 24" fill="#009639"><path d="M12 2L2 19.5h20L12 2zm0 3.5L19.5 18h-15L12 5.5zM11 10v4h2v-4h-2z"/></svg>
+      Nginx
+    </div>
+  </div>
+
+  <div class="hero-content">
+    <div class="hero-left">
+      <p class="hero-label">
+        <span class="label-dot"></span>
+        <span id="status-text">All Systems Operational</span>
+      </p>
+      <h1 class="hero-name">Rimon<br><span class="name-accent">Shil</span></h1>
+      <h2 class="hero-role">
+        <span class="typed" id="typed-text"></span><span class="cursor">_</span>
+      </h2>
+      <p class="hero-summary">
+        DevOps Engineer with <strong>4+ years</strong> designing, securing, and scaling production infrastructure on AWS &amp; Azure. Kubernetes · CI/CD · DevSecOps.
+      </p>
+
+      <!-- Prometheus-style status metrics -->
+      <div class="metrics-bar">
+        <div class="metric">
+          <span class="metric-dot dot-green"></span>
+          <span class="metric-label">eks_nodes</span>
+          <span class="metric-val">2/2</span>
+        </div>
+        <div class="metric">
+          <span class="metric-dot dot-blue pulse-dot"></span>
+          <span class="metric-label">pipelines_running</span>
+          <span class="metric-val" id="pipeline-counter">3</span>
+        </div>
+        <div class="metric">
+          <span class="metric-dot dot-green"></span>
+          <span class="metric-label">uptime</span>
+          <span class="metric-val">99.9%</span>
+        </div>
+        <div class="metric">
+          <span class="metric-dot dot-red-dim"></span>
+          <span class="metric-label">cve_critical</span>
+          <span class="metric-val green-val">0</span>
+        </div>
+      </div>
+
+      <!-- Security scan badges — like real Trivy output -->
+      <div class="scan-badges">
+        <span class="scan-badge critical">CRITICAL <span class="badge-num">0</span></span>
+        <span class="scan-badge high">HIGH <span class="badge-num">0</span></span>
+        <span class="scan-badge medium">MEDIUM <span class="badge-num">2</span></span>
+        <span class="scan-badge info">trivy v0.52 · myapp:v2.4.1</span>
+      </div>
+
+      <div class="hero-actions">
+        <a href="#projects" class="btn btn-primary"><span class="btn-icon">▶</span> View Projects</a>
+        <a href="#contact" class="btn btn-outline">Get in Touch</a>
+        <a href="Rimon Shil.pdf" download="Rimon_Shil_CV.pdf" class="btn btn-download">
+          <svg viewBox="0 0 16 16" fill="currentColor" width="14" height="14"><path d="M8 12l-4-4h2.5V3h3v5H12L8 12z"/><path d="M2 14h12v-1.5H2V14z"/></svg>
+          Download CV
+        </a>
+      </div>
+    </div>
+
+    <div class="hero-right">
+      <!-- Animated terminal -->
+      <div class="hero-terminal">
+        <div class="terminal-header">
+          <span class="t-dot t-red"></span>
+          <span class="t-dot t-yellow"></span>
+          <span class="t-dot t-green"></span>
+          <span class="t-title">rimon@devops:~/infra$</span>
+          <span class="t-badge">LIVE</span>
+        </div>
+        <div class="terminal-body" id="terminal-lines"></div>
+      </div>
+
+      <!-- Grafana-style sparkline chart -->
+      <div class="mini-chart">
+        <div class="chart-header">
+          <span class="chart-label">node_cpu_usage{cluster="eks-prod"}</span>
+          <span class="chart-status ok">● Healthy</span>
+        </div>
+        <canvas id="sparkline-canvas" height="52"></canvas>
+        <div class="chart-legend">
+          <span class="legend-item"><span class="legend-dot" style="background:#58a6ff"></span>cpu</span>
+          <span class="legend-item"><span class="legend-dot" style="background:#3fb950"></span>mem</span>
+          <span class="legend-item"><span class="legend-dot" style="background:#d2a8ff"></span>req/s</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- =====================================================
+     ABOUT  (with DevOps Infinity Loop)
+===================================================== -->
+<section id="about">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-tag">01</span>
+      <h2>About Me</h2>
+      <div class="section-line"></div>
+    </div>
+    <div class="about-grid">
+      <div class="about-text reveal">
+        <p>I'm a DevOps Engineer based in <strong>Dhaka, Bangladesh</strong>, with a Computer Science degree from Ahsanullah University of Science &amp; Technology. I build and maintain cloud-native infrastructure that's secure, observable, and built to scale.</p>
+        <p>My work spans end-to-end AWS and Azure infrastructure, automated CI/CD pipelines, container orchestration with Kubernetes (EKS), and DevSecOps practices — vulnerability scanning, incident response, and proactive hardening of production environments.</p>
+        <p>I reduce toil through automation, shorten release cycles, and give teams the confidence to ship faster without sacrificing reliability or security.</p>
+        <div class="about-stats">
+          <div class="stat reveal-stagger">
+            <span class="stat-number" data-target="4">0</span><span class="stat-plus">+</span>
+            <span class="stat-label">Years Exp.</span>
+          </div>
+          <div class="stat reveal-stagger">
+            <span class="stat-number" data-target="2">0</span>
+            <span class="stat-label">Cloud Platforms</span>
+          </div>
+          <div class="stat reveal-stagger">
+            <span class="stat-number" data-target="3">0</span>
+            <span class="stat-label">Prod Projects</span>
+          </div>
+          <div class="stat reveal-stagger">
+            <span class="stat-number" data-target="0">0</span><span class="stat-plus">%</span>
+            <span class="stat-label">Downtime Target</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="about-right">
+        <!-- DevOps infinity loop SVG -->
+        <div class="devops-loop reveal">
+          <svg viewBox="0 0 320 160" class="loop-svg" aria-label="DevOps infinity loop">
+            <!-- Infinity path -->
+            <path id="loop-path" d="M 160 80 C 160 40, 220 20, 260 60 C 300 100, 300 140, 260 140 C 220 140, 180 100, 160 80 C 140 60, 100 20, 60 60 C 20 100, 20 140, 60 140 C 100 140, 160 120, 160 80 Z" fill="none" stroke="rgba(88,166,255,0.15)" stroke-width="28"/>
+            <path d="M 160 80 C 160 40, 220 20, 260 60 C 300 100, 300 140, 260 140 C 220 140, 180 100, 160 80 C 140 60, 100 20, 60 60 C 20 100, 20 140, 60 140 C 100 140, 160 120, 160 80 Z" fill="none" stroke="rgba(88,166,255,0.35)" stroke-width="2" stroke-dasharray="4 8"/>
+
+            <!-- Animated dot on path -->
+            <circle r="5" fill="#58a6ff">
+              <animateMotion dur="4s" repeatCount="indefinite" keyTimes="0;1" calcMode="linear">
+                <mpath href="#loop-path"/>
+              </animateMotion>
+            </circle>
+            <circle r="3" fill="#3fb950" opacity="0.8">
+              <animateMotion dur="4s" begin="2s" repeatCount="indefinite">
+                <mpath href="#loop-path"/>
+              </animateMotion>
+            </circle>
+
+            <!-- Labels on the loop -->
+            <text x="75"  y="52"  class="loop-label">Plan</text>
+            <text x="42"  y="110" class="loop-label">Code</text>
+            <text x="75"  y="148" class="loop-label">Build</text>
+            <text x="148" y="72"  class="loop-label" fill="#3fb950">Test</text>
+            <text x="220" y="52"  class="loop-label">Release</text>
+            <text x="242" y="110" class="loop-label">Deploy</text>
+            <text x="218" y="148" class="loop-label">Operate</text>
+            <text x="148" y="130" class="loop-label" fill="#d2a8ff">Monitor</text>
+          </svg>
+        </div>
+
+        <!-- YAML card -->
+        <div class="info-card reveal">
+          <h3>// quick_info.yaml</h3>
+          <ul>
+            <li><span class="info-key">location:</span><span class="info-val">Dhaka, Bangladesh</span></li>
+            <li><span class="info-key">degree:</span><span class="info-val">B.Sc. CSE</span></li>
+            <li><span class="info-key">status:</span><span class="status-badge"><span class="pulse-dot-sm"></span>Open to Work</span></li>
+            <li><span class="info-key">specialty:</span><span class="info-val">AWS &amp; Kubernetes</span></li>
+            <li><span class="info-key">focus:</span><span class="info-val">DevSecOps · IaC · SRE</span></li>
+          </ul>
+          <div class="cert-row">
+            <span class="cert-tag">AWS</span>
+            <span class="cert-tag">Kubernetes</span>
+            <span class="cert-tag">DevSecOps</span>
+            <span class="cert-tag">IaC</span>
+            <span class="cert-tag">SRE</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- =====================================================
+     SKILLS  (SVG-branded tool logos)
+===================================================== -->
+<section id="skills">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-tag">02</span>
+      <h2>Tech Stack</h2>
+      <div class="section-line"></div>
+    </div>
+
+    <!-- Tool logo orbit row -->
+    <div class="tool-orbit reveal">
+      <div class="tool-logo tl-docker" title="Docker">
+        <svg viewBox="0 0 24 17" fill="#2496ED"><rect x="0"  y="6"  width="3" height="3"/><rect x="4"  y="6"  width="3" height="3"/><rect x="8"  y="6"  width="3" height="3"/><rect x="8"  y="3"  width="3" height="3"/><rect x="12" y="6"  width="3" height="3"/><rect x="12" y="3"  width="3" height="3"/><rect x="12" y="0"  width="3" height="3"/><rect x="4"  y="3"  width="3" height="3"/><path d="M23.4 6.4c-.5-.4-1.7-.5-2.6-.3-.1-1-1-1.7-1.9-2l-.5-.2-.3.5c-.3.6-.4 1.5-.1 2.2-.4.2-.9.5-1.3.5H.4c-.2 1.2.1 2.7.9 3.8.8 1 2.1 1.5 3.8 1.5 3.5 0 6.2-1.6 7.9-4.5.9.1 2.8.2 3.7-1.7.1-.1.2-.3.3-.5l.1-.3-.7-.7z" fill="#2496ED"/></svg>
+        <span>Docker</span>
+      </div>
+      <div class="tool-logo tl-k8s" title="Kubernetes">
+        <svg viewBox="0 0 32 32" fill="#326CE5"><path d="M16 1.7l-14 7.5v13.6l14 7.5 14-7.5V9.2L16 1.7zm0 2.2l11.7 6.3-4.3 2.3-7.4-4-7.4 4L4.3 10.2 16 3.9zm-12 8l4.6 2.5v5L4 22V11.9zm13.3 7v5.3L12 27.1V21.9l5.3-2.8zm1.4 0l5.3 2.8v5.2l-5.3 2.9v-5.3l.1-.1-.1-5.5zm6.7-1.5v4.7l-4.6 2.5V17l4.6-2.6zM16 11.2l4.3 2.3L16 16l-4.3-2.5 4.3-2.3z"/></svg>
+        <span>Kubernetes</span>
+      </div>
+      <div class="tool-logo tl-aws" title="AWS">
+        <svg viewBox="0 0 24 24" fill="#FF9900"><path d="M6.6 11.1c0 .3.1.6.2.8l.3.5c0 .1.1.2.1.3 0 .2-.1.3-.4.5-.3.2-.6.3-1 .3-.4 0-.6-.1-.9-.4a2.3 2.3 0 0 1-.7-1.7c0-.7.3-1.4.7-1.8.5-.5 1.1-.7 1.8-.7.4 0 .7.1 1 .3.3.2.4.4.4.7s-.1.5-.3.6c-.2.2-.3.3-.3.4s0 .2.1.3zm7.3 0c0 .3.1.6.2.8l.3.5c0 .1.1.2.1.3 0 .2-.1.3-.4.5-.3.2-.6.3-1 .3-.4 0-.6-.1-.9-.4a2.3 2.3 0 0 1-.7-1.7c0-.7.3-1.4.7-1.8.5-.5 1.1-.7 1.8-.7.4 0 .7.1 1 .3.3.2.4.4.4.7s-.1.5-.3.6c-.2.2-.3.3-.3.4s0 .2.1.3zM12 16.5c-2.3 0-4.1-.9-5.5-2.8h11c-1.4 1.9-3.2 2.8-5.5 2.8z"/></svg>
+        <span>AWS</span>
+      </div>
+      <div class="tool-logo tl-tf" title="Terraform">
+        <svg viewBox="0 0 24 24" fill="#7B42BC"><path d="M1.5 4.5l6 3.5v7L1.5 11.5V4.5zm8 0l5.5 3.2v7L9.5 12V4.5zm8 4.3l5 3v7l-5-3v-7zM9.5.5L16 4v7L9.5 8V.5z"/></svg>
+        <span>Terraform</span>
+      </div>
+      <div class="tool-logo tl-gh" title="GitHub Actions">
+        <svg viewBox="0 0 24 24" fill="#2088FF"><path d="M12 1C5.9 1 1 5.9 1 12c0 4.9 3.1 9 7.5 10.5.5.1.7-.2.7-.5v-1.7c-3 .6-3.6-1.4-3.6-1.4-.5-1.2-1.2-1.5-1.2-1.5-1-.7.1-.7.1-.7 1.1.1 1.6 1.1 1.6 1.1 1 1.6 2.5 1.2 3.1.9.1-.7.4-1.2.7-1.4-2.4-.3-4.9-1.2-4.9-5.3 0-1.2.4-2.1 1.1-2.9-.1-.3-.5-1.4.1-2.9 0 0 .9-.3 3 1.1a10.4 10.4 0 0 1 5.5 0c2.1-1.4 3-1.1 3-1.1.6 1.5.2 2.6.1 2.9.7.8 1.1 1.7 1.1 2.9 0 4.1-2.5 5-4.9 5.3.4.3.7 1 .7 2v3c0 .3.2.6.7.5C19.9 21 23 16.9 23 12c0-6.1-4.9-11-11-11z"/></svg>
+        <span>GH Actions</span>
+      </div>
+      <div class="tool-logo tl-prometheus" title="Prometheus">
+        <svg viewBox="0 0 24 24" fill="#E6522C"><circle cx="12" cy="12" r="10" fill="none" stroke="#E6522C" stroke-width="1.5"/><path d="M12 7v5l3 3" stroke="#E6522C" stroke-width="1.5" fill="none" stroke-linecap="round"/></svg>
+        <span>Prometheus</span>
+      </div>
+      <div class="tool-logo tl-grafana" title="Grafana">
+        <svg viewBox="0 0 24 24" fill="#F46800"><path d="M12 3C7 3 3 7 3 12s4 9 9 9 9-4 9-9-4-9-9-9zm0 2l4 7H8l4-7zm0 11l-4-6h8l-4 6z"/></svg>
+        <span>Grafana</span>
+      </div>
+      <div class="tool-logo tl-trivy" title="Trivy">
+        <svg viewBox="0 0 24 24" fill="#1904DA"><path d="M12 2L3 7v10l9 5 9-5V7L12 2zm0 2.3L19 8v8l-7 3.9L5 16V8l7-3.7zM11 9v6h2V9h-2zm0 7v2h2v-2h-2z"/></svg>
+        <span>Trivy</span>
+      </div>
+      <div class="tool-logo tl-ansible" title="Ansible">
+        <svg viewBox="0 0 24 24" fill="#EE0000"><circle cx="12" cy="12" r="10" fill="none" stroke="#EE0000" stroke-width="1.5"/><path d="M8 17l5-10 4 10M9.5 14h5" stroke="#EE0000" stroke-width="1.5" fill="none" stroke-linecap="round"/></svg>
+        <span>Ansible</span>
+      </div>
+    </div>
+
+    <div class="skills-grid">
+      <div class="skill-category reveal">
+        <div class="skill-cat-header">
+          <div class="skill-icon-wrap cloud-icon">
+            <svg viewBox="0 0 24 24" fill="#FF9900" width="20" height="20"><path d="M6.6 11.1c0 .3.1.6.2.8l.3.5c0 .1.1.2.1.3 0 .2-.1.3-.4.5-.3.2-.6.3-1 .3-.4 0-.6-.1-.9-.4a2.3 2.3 0 0 1-.7-1.7c0-.7.3-1.4.7-1.8.5-.5 1.1-.7 1.8-.7.4 0 .7.1 1 .3.3.2.4.4.4.7s-.1.5-.3.6c-.2.2-.3.3-.3.4s0 .2.1.3zm7.3 0c0 .3.1.6.2.8l.3.5c0 .1.1.2.1.3 0 .2-.1.3-.4.5-.3.2-.6.3-1 .3-.4 0-.6-.1-.9-.4a2.3 2.3 0 0 1-.7-1.7c0-.7.3-1.4.7-1.8.5-.5 1.1-.7 1.8-.7.4 0 .7.1 1 .3.3.2.4.4.4.7s-.1.5-.3.6c-.2.2-.3.3-.3.4s0 .2.1.3zM12 16.5c-2.3 0-4.1-.9-5.5-2.8h11c-1.4 1.9-3.2 2.8-5.5 2.8z"/></svg>
+          </div>
+          <h3>Cloud Platforms</h3>
+        </div>
+        <div class="skill-tags">
+          <span class="stag stag-aws">AWS</span><span class="stag stag-azure">Azure</span>
+          <span class="stag">EC2</span><span class="stag">EKS</span><span class="stag">S3</span>
+          <span class="stag">RDS</span><span class="stag">VPC</span><span class="stag">ELB</span>
+        </div>
+      </div>
+
+      <div class="skill-category reveal">
+        <div class="skill-cat-header">
+          <div class="skill-icon-wrap cicd-icon">
+            <svg viewBox="0 0 24 24" fill="#2088FF" width="20" height="20"><path d="M12 1C5.9 1 1 5.9 1 12c0 4.9 3.1 9 7.5 10.5.5.1.7-.2.7-.5v-1.7c-3 .6-3.6-1.4-3.6-1.4-.5-1.2-1.2-1.5-1.2-1.5-1-.7.1-.7.1-.7 1.1.1 1.6 1.1 1.6 1.1 1 1.6 2.5 1.2 3.1.9.1-.7.4-1.2.7-1.4-2.4-.3-4.9-1.2-4.9-5.3 0-1.2.4-2.1 1.1-2.9-.1-.3-.5-1.4.1-2.9 0 0 .9-.3 3 1.1a10.4 10.4 0 0 1 5.5 0c2.1-1.4 3-1.1 3-1.1.6 1.5.2 2.6.1 2.9.7.8 1.1 1.7 1.1 2.9 0 4.1-2.5 5-4.9 5.3.4.3.7 1 .7 2v3c0 .3.2.6.7.5C19.9 21 23 16.9 23 12c0-6.1-4.9-11-11-11z"/></svg>
+          </div>
+          <h3>CI/CD &amp; Automation</h3>
+        </div>
+        <div class="skill-tags">
+          <span class="stag stag-gh">GitHub Actions</span><span class="stag stag-jenkins">Jenkins</span>
+          <span class="stag">Azure DevOps</span><span class="stag">GitLab CI</span>
+          <span class="stag stag-tf">Terraform</span><span class="stag">Ansible</span>
+        </div>
+      </div>
+
+      <div class="skill-category reveal">
+        <div class="skill-cat-header">
+          <div class="skill-icon-wrap docker-icon">
+            <svg viewBox="0 0 24 17" fill="#2496ED" width="24" height="17"><rect x="0" y="6" width="3" height="3"/><rect x="4" y="6" width="3" height="3"/><rect x="8" y="6" width="3" height="3"/><rect x="8" y="3" width="3" height="3"/><rect x="12" y="6" width="3" height="3"/><rect x="12" y="3" width="3" height="3"/><rect x="4" y="3" width="3" height="3"/></svg>
+          </div>
+          <h3>Containers &amp; Orchestration</h3>
+        </div>
+        <div class="skill-tags">
+          <span class="stag stag-docker">Docker</span><span class="stag stag-k8s">Kubernetes</span>
+          <span class="stag">EKS</span><span class="stag">Compose</span><span class="stag">Helm</span>
+        </div>
+      </div>
+
+      <div class="skill-category reveal">
+        <div class="skill-cat-header">
+          <div class="skill-icon-wrap monitor-icon">
+            <svg viewBox="0 0 24 24" fill="#E6522C" width="20" height="20"><circle cx="12" cy="12" r="10" fill="none" stroke="#E6522C" stroke-width="1.5"/><path d="M12 7v5l3 3" stroke="#E6522C" stroke-width="1.5" fill="none" stroke-linecap="round"/></svg>
+          </div>
+          <h3>Monitoring &amp; Observability</h3>
+        </div>
+        <div class="skill-tags">
+          <span class="stag stag-prom">Prometheus</span><span class="stag stag-grafana">Grafana</span>
+          <span class="stag">Datadog</span><span class="stag">New Relic</span><span class="stag">Nginx Amplify</span>
+        </div>
+      </div>
+
+      <div class="skill-category reveal">
+        <div class="skill-cat-header">
+          <div class="skill-icon-wrap sec-icon">
+            <svg viewBox="0 0 24 24" fill="#1904DA" width="20" height="20"><path d="M12 2L3 7v10l9 5 9-5V7L12 2zm0 2.3L19 8v8l-7 3.9L5 16V8l7-3.7zM11 9v6h2V9h-2zm0 7v2h2v-2h-2z"/></svg>
+          </div>
+          <h3>Security &amp; Code Quality</h3>
+        </div>
+        <div class="skill-tags">
+          <span class="stag stag-trivy">Trivy</span><span class="stag">SonarQube</span>
+          <span class="stag">OWASP</span><span class="stag">Fail2ban</span><span class="stag">FindBugs</span>
+        </div>
+      </div>
+
+      <div class="skill-category reveal">
+        <div class="skill-cat-header">
+          <div class="skill-icon-wrap script-icon">💻</div>
+          <h3>Scripting &amp; Databases</h3>
+        </div>
+        <div class="skill-tags">
+          <span class="stag">Bash</span><span class="stag">Python</span><span class="stag">PowerShell</span>
+          <span class="stag">PostgreSQL</span><span class="stag">MySQL</span><span class="stag">MongoDB</span>
+        </div>
+      </div>
+
+      <div class="skill-category reveal">
+        <div class="skill-cat-header">
+          <div class="skill-icon-wrap web-icon">
+            <svg viewBox="0 0 24 24" fill="#009639" width="20" height="20"><path d="M12 2L2 19.5h20L12 2zm0 3.5L19.5 18h-15L12 5.5zM11 10v4h2v-4h-2z"/></svg>
+          </div>
+          <h3>Web Servers</h3>
+        </div>
+        <div class="skill-tags">
+          <span class="stag stag-nginx">Nginx</span><span class="stag">Apache</span><span class="stag">IIS</span>
+        </div>
+      </div>
+
+      <div class="skill-category reveal">
+        <div class="skill-cat-header">
+          <div class="skill-icon-wrap collab-icon">🤝</div>
+          <h3>Collaboration</h3>
+        </div>
+        <div class="skill-tags">
+          <span class="stag">Git</span><span class="stag">GitHub</span><span class="stag">GitLab</span>
+          <span class="stag">Jira</span><span class="stag">Confluence</span><span class="stag">Azure Boards</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- =====================================================
+     CI/CD PIPELINE
+===================================================== -->
+<section id="pipeline">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-tag">03</span>
+      <h2>CI/CD Pipeline</h2>
+      <div class="section-line"></div>
+    </div>
+    <p class="pipeline-subtitle">Live simulation of the GitHub Actions workflow I design and maintain in production on <code>release/v*</code> → EKS.</p>
+
+    <div class="pipeline-wrapper reveal">
+      <div class="branch-label">
+        <span class="branch-icon">⎇</span>
+        <span class="branch-name">release/v2.4.1</span>
+        <span class="branch-badge">TRIGGERED</span>
+        <span class="branch-sha">sha: a3f9c1d</span>
+      </div>
+
+      <div class="pipeline-track">
+        <div class="pipeline-stage" data-stage="0">
+          <div class="stage-node" id="sn-0"><div class="stage-spinner"></div><span class="stage-icon">📦</span></div>
+          <span class="stage-name">Checkout</span>
+          <span class="stage-time" id="st-0">–</span>
+        </div>
+        <div class="pipe-arrow"></div>
+        <div class="pipeline-stage" data-stage="1">
+          <div class="stage-node" id="sn-1"><div class="stage-spinner"></div><span class="stage-icon">🔨</span></div>
+          <span class="stage-name">Build</span>
+          <span class="stage-time" id="st-1">–</span>
+        </div>
+        <div class="pipe-arrow"></div>
+        <div class="pipeline-stage" data-stage="2">
+          <div class="stage-node" id="sn-2"><div class="stage-spinner"></div>
+            <svg viewBox="0 0 24 24" fill="#1904DA" width="22" height="22"><path d="M12 2L3 7v10l9 5 9-5V7L12 2zm0 2.3L19 8v8l-7 3.9L5 16V8l7-3.7zM11 9v6h2V9h-2zm0 7v2h2v-2h-2z"/></svg>
+          </div>
+          <span class="stage-name">Trivy Scan</span>
+          <span class="stage-time" id="st-2">–</span>
+        </div>
+        <div class="pipe-arrow"></div>
+        <div class="pipeline-stage" data-stage="3">
+          <div class="stage-node" id="sn-3"><div class="stage-spinner"></div>
+            <svg viewBox="0 0 24 17" fill="#2496ED" width="24" height="17"><rect x="0" y="6" width="3" height="3"/><rect x="4" y="6" width="3" height="3"/><rect x="8" y="6" width="3" height="3"/><rect x="8" y="3" width="3" height="3"/><rect x="12" y="6" width="3" height="3"/><rect x="12" y="3" width="3" height="3"/><rect x="4" y="3" width="3" height="3"/></svg>
+          </div>
+          <span class="stage-name">Docker Push</span>
+          <span class="stage-time" id="st-3">–</span>
+        </div>
+        <div class="pipe-arrow"></div>
+        <div class="pipeline-stage" data-stage="4">
+          <div class="stage-node" id="sn-4"><div class="stage-spinner"></div>
+            <svg viewBox="0 0 32 32" fill="#326CE5" width="22" height="22"><path d="M16 1.7l-14 7.5v13.6l14 7.5 14-7.5V9.2L16 1.7zm0 2.2l11.7 6.3-4.3 2.3-7.4-4-7.4 4L4.3 10.2 16 3.9zm-12 8l4.6 2.5v5L4 22V11.9zm13.3 7v5.3L12 27.1V21.9l5.3-2.8zm1.4 0l5.3 2.8v5.2l-5.3 2.9v-5.3l.1-.1-.1-5.5zm6.7-1.5v4.7l-4.6 2.5V17l4.6-2.6zM16 11.2l4.3 2.3L16 16l-4.3-2.5 4.3-2.3z"/></svg>
+          </div>
+          <span class="stage-name">Deploy EKS</span>
+          <span class="stage-time" id="st-4">–</span>
+        </div>
+        <div class="pipe-arrow"></div>
+        <div class="pipeline-stage" data-stage="5">
+          <div class="stage-node" id="sn-5"><div class="stage-spinner"></div><span class="stage-icon">✅</span></div>
+          <span class="stage-name">Health Check</span>
+          <span class="stage-time" id="st-5">–</span>
+        </div>
+      </div>
+
+      <div class="pipeline-log" id="pipeline-log">
+        <span class="log-placeholder">Waiting for pipeline trigger…</span>
+      </div>
+      <button class="btn btn-primary pipeline-restart" id="pipeline-restart"><span>↺</span> Re-run Pipeline</button>
+    </div>
+  </div>
+</section>
+
+<!-- =====================================================
+     KUBERNETES POD TOPOLOGY
+===================================================== -->
+<section id="k8s">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-tag">04</span>
+      <h2>Kubernetes Cluster</h2>
+      <div class="section-line"></div>
+    </div>
+    <p class="section-sub">Live visualisation of the EKS production topology I manage — nodes, namespaces, and pod health.</p>
+
+    <div class="k8s-wrapper reveal">
+      <!-- Cluster header -->
+      <div class="k8s-cluster-bar">
+        <svg viewBox="0 0 32 32" fill="#326CE5" width="18" height="18"><path d="M16 1.7l-14 7.5v13.6l14 7.5 14-7.5V9.2L16 1.7zm0 2.2l11.7 6.3-4.3 2.3-7.4-4-7.4 4L4.3 10.2 16 3.9zm-12 8l4.6 2.5v5L4 22V11.9zm13.3 7v5.3L12 27.1V21.9l5.3-2.8zm1.4 0l5.3 2.8v5.2l-5.3 2.9v-5.3l.1-.1-.1-5.5zm6.7-1.5v4.7l-4.6 2.5V17l4.6-2.6zM16 11.2l4.3 2.3L16 16l-4.3-2.5 4.3-2.3z"/></svg>
+        <span class="k8s-cluster-name">eks-prod · ap-southeast-1</span>
+        <span class="k8s-badge ok">● Healthy</span>
+        <span class="k8s-version">v1.29</span>
+      </div>
+
+      <!-- Node grid -->
+      <div class="k8s-nodes">
+        <div class="k8s-node">
+          <div class="k8s-node-header">
+            <span class="node-icon">🖥</span>
+            <div>
+              <div class="node-name">eks-prod-node-1</div>
+              <div class="node-meta">m5.xlarge · Ready</div>
+            </div>
+            <span class="node-badge running">Ready</span>
+          </div>
+          <div class="node-resources">
+            <div class="res-row"><span class="res-label">CPU</span><div class="res-bar"><div class="res-fill cpu-fill" style="width:68%"></div></div><span class="res-val">68%</span></div>
+            <div class="res-row"><span class="res-label">MEM</span><div class="res-bar"><div class="res-fill mem-fill" style="width:54%"></div></div><span class="res-val">54%</span></div>
+          </div>
+          <div class="pod-grid">
+            <div class="pod running" title="api-deployment-v2 · Running"><span class="pod-dot"></span>api</div>
+            <div class="pod running" title="auth-svc · Running"><span class="pod-dot"></span>auth</div>
+            <div class="pod running" title="nginx-ingress · Running"><span class="pod-dot"></span>nginx</div>
+            <div class="pod running" title="prometheus · Running"><span class="pod-dot"></span>prom</div>
+            <div class="pod running" title="grafana · Running"><span class="pod-dot"></span>grafana</div>
+            <div class="pod pending" title="worker-job · Pending"><span class="pod-dot"></span>worker</div>
+          </div>
+        </div>
+
+        <div class="k8s-node">
+          <div class="k8s-node-header">
+            <span class="node-icon">🖥</span>
+            <div>
+              <div class="node-name">eks-prod-node-2</div>
+              <div class="node-meta">m5.xlarge · Ready</div>
+            </div>
+            <span class="node-badge running">Ready</span>
+          </div>
+          <div class="node-resources">
+            <div class="res-row"><span class="res-label">CPU</span><div class="res-bar"><div class="res-fill cpu-fill" style="width:41%"></div></div><span class="res-val">41%</span></div>
+            <div class="res-row"><span class="res-label">MEM</span><div class="res-bar"><div class="res-fill mem-fill" style="width:72%"></div></div><span class="res-val">72%</span></div>
+          </div>
+          <div class="pod-grid">
+            <div class="pod running" title="payment-svc · Running"><span class="pod-dot"></span>payment</div>
+            <div class="pod running" title="db-proxy · Running"><span class="pod-dot"></span>db-proxy</div>
+            <div class="pod running" title="redis · Running"><span class="pod-dot"></span>redis</div>
+            <div class="pod running" title="trivy-scanner · Running"><span class="pod-dot"></span>trivy</div>
+            <div class="pod terminated" title="old-deploy · Terminated"><span class="pod-dot"></span>old-v1</div>
+            <div class="pod running" title="cert-manager · Running"><span class="pod-dot"></span>cert-mgr</div>
+          </div>
+        </div>
+
+        <!-- Namespace summary card -->
+        <div class="k8s-namespaces">
+          <div class="ns-header">Namespaces</div>
+          <div class="ns-row"><span class="ns-name">production</span><span class="ns-pods">9 pods</span><span class="ns-status ok">●</span></div>
+          <div class="ns-row"><span class="ns-name">monitoring</span><span class="ns-pods">3 pods</span><span class="ns-status ok">●</span></div>
+          <div class="ns-row"><span class="ns-name">security</span><span class="ns-pods">2 pods</span><span class="ns-status ok">●</span></div>
+          <div class="ns-row"><span class="ns-name">ingress-nginx</span><span class="ns-pods">1 pod</span><span class="ns-status ok">●</span></div>
+          <div class="ns-row"><span class="ns-name">kube-system</span><span class="ns-pods">6 pods</span><span class="ns-status ok">●</span></div>
+
+          <div class="ns-divider"></div>
+          <div class="ns-header" style="margin-top:12px">Services</div>
+          <div class="ns-row"><span class="ns-name">api-svc</span><span class="ns-type">LoadBalancer</span><span class="ns-status ok">●</span></div>
+          <div class="ns-row"><span class="ns-name">auth-svc</span><span class="ns-type">ClusterIP</span><span class="ns-status ok">●</span></div>
+          <div class="ns-row"><span class="ns-name">payment-svc</span><span class="ns-type">ClusterIP</span><span class="ns-status ok">●</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- =====================================================
+     PROMETHEUS / GRAFANA MONITORING
+===================================================== -->
+<section id="monitoring">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-tag">05</span>
+      <h2>Monitoring Dashboard</h2>
+      <div class="section-line"></div>
+    </div>
+    <p class="section-sub">Simulated Prometheus + Grafana metrics panel — the observability stack I build and maintain in production.</p>
+
+    <div class="grafana-wrapper reveal">
+      <!-- Dashboard header bar -->
+      <div class="grafana-header">
+        <div class="grafana-logo">
+          <svg viewBox="0 0 24 24" fill="#F46800" width="18" height="18"><path d="M12 3C7 3 3 7 3 12s4 9 9 9 9-4 9-9-4-9-9-9zm0 2l4 7H8l4-7zm0 11l-4-6h8l-4 6z"/></svg>
+          Grafana · Production
+        </div>
+        <div class="grafana-meta">
+          <span class="gf-range">Last 1h</span>
+          <span class="gf-refresh">↻ 30s</span>
+          <span class="gf-time" id="gf-time">--:--:--</span>
+        </div>
+      </div>
+
+      <!-- Stat tiles -->
+      <div class="stat-tiles">
+        <div class="stat-tile">
+          <div class="tile-label">Avg CPU Usage</div>
+          <div class="tile-value" id="tile-cpu">54.5%</div>
+          <div class="tile-delta green">↓ -3.2% vs 1h ago</div>
+        </div>
+        <div class="stat-tile">
+          <div class="tile-label">Memory Usage</div>
+          <div class="tile-value" id="tile-mem">63%</div>
+          <div class="tile-delta yellow">↑ +1.1% vs 1h ago</div>
+        </div>
+        <div class="stat-tile">
+          <div class="tile-label">HTTP Requests/s</div>
+          <div class="tile-value" id="tile-rps">284</div>
+          <div class="tile-delta green">↑ +12 vs 1h ago</div>
+        </div>
+        <div class="stat-tile">
+          <div class="tile-label">Error Rate</div>
+          <div class="tile-value green-val" id="tile-err">0.02%</div>
+          <div class="tile-delta green">↓ -0.01% vs 1h ago</div>
+        </div>
+        <div class="stat-tile">
+          <div class="tile-label">P99 Latency</div>
+          <div class="tile-value" id="tile-lat">142ms</div>
+          <div class="tile-delta green">↓ -8ms vs 1h ago</div>
+        </div>
+        <div class="stat-tile">
+          <div class="tile-label">Uptime</div>
+          <div class="tile-value green-val">99.94%</div>
+          <div class="tile-delta green">30d rolling</div>
+        </div>
+      </div>
+
+      <!-- Multi-line sparkline graph -->
+      <div class="grafana-panel">
+        <div class="panel-title">node_cpu_usage_seconds_total · 1h window</div>
+        <canvas id="grafana-canvas" height="120"></canvas>
+      </div>
+
+      <!-- Alert rules -->
+      <div class="alert-rules">
+        <div class="alert-rule-header">Prometheus Alert Rules</div>
+        <div class="alert-row ok"><span class="alert-dot"></span><span class="alert-name">HighCPUUsage</span><span class="alert-expr">cpu &gt; 85%</span><span class="alert-state">OK</span></div>
+        <div class="alert-row ok"><span class="alert-dot"></span><span class="alert-name">PodCrashLooping</span><span class="alert-expr">restart_count &gt; 5</span><span class="alert-state">OK</span></div>
+        <div class="alert-row ok"><span class="alert-dot"></span><span class="alert-name">DiskSpaceLow</span><span class="alert-expr">disk_free &lt; 15%</span><span class="alert-state">OK</span></div>
+        <div class="alert-row warn"><span class="alert-dot"></span><span class="alert-name">HighMemoryUsage</span><span class="alert-expr">mem &gt; 70%</span><span class="alert-state">WARN</span></div>
+        <div class="alert-row ok"><span class="alert-dot"></span><span class="alert-name">SSLCertExpiry</span><span class="alert-expr">expiry &lt; 30d</span><span class="alert-state">OK</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- =====================================================
+     EXPERIENCE
+===================================================== -->
+<section id="experience">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-tag">06</span>
+      <h2>Experience</h2>
+      <div class="section-line"></div>
+    </div>
+    <div class="timeline">
+      <div class="timeline-item">
+        <div class="timeline-marker">
+          <span class="timeline-dot pulse-ring"></span>
+          <span class="timeline-line"></span>
+        </div>
+        <div class="timeline-card reveal">
+          <div class="timeline-header">
+            <div>
+              <h3>DevOps Engineer III</h3>
+              <p class="timeline-company">Robendevs Co. — Dhaka, Bangladesh</p>
+            </div>
+            <span class="timeline-date">Dec 2023 – Present</span>
+          </div>
+          <ul class="timeline-bullets">
+            <li>Built and hardened GitHub Actions CI/CD pipelines with branch-pattern-triggered deployments (<code>release/v*</code>) directly to production EKS clusters, reducing release lead time and manual steps.</li>
+            <li>Automated infrastructure provisioning with Terraform (IaC), accelerating environment setup and reducing human error across multi-environment deployments.</li>
+            <li>Ensured high availability of containerised microservices using Docker and Kubernetes (EKS), supporting zero-downtime deployments.</li>
+            <li>Designed a centralised, multi-repo Trivy vulnerability scanning architecture with auto-fix jobs, S3 report archiving, and Slack/Discord alerting — catching CRITICAL/HIGH findings before merge.</li>
+            <li>Implemented Prometheus + Grafana monitoring stacks, reducing mean time to detection (MTTD) for infrastructure incidents.</li>
+            <li>Hardened internet-facing nginx environments against automated scanner traffic using allowlist-based routing, rate limiting, User-Agent filtering, and Fail2ban.</li>
+          </ul>
+          <div class="timeline-tags">
+            <span>AWS EKS</span><span>GitHub Actions</span><span>Terraform</span><span>Trivy</span><span>Prometheus</span><span>Grafana</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="timeline-item">
+        <div class="timeline-marker">
+          <span class="timeline-dot"></span>
+        </div>
+        <div class="timeline-card reveal">
+          <div class="timeline-header">
+            <div>
+              <h3>DevOps Engineer II</h3>
+              <p class="timeline-company">Bondstein Technologies Limited — Dhaka, Bangladesh</p>
+            </div>
+            <span class="timeline-date">Sep 2021 – Nov 2023</span>
+          </div>
+          <ul class="timeline-bullets">
+            <li>Designed and deployed highly available AWS infrastructure using EC2, S3, RDS, VPC, ELB, and Auto Scaling Groups to support production workloads.</li>
+            <li>Configured Azure cloud infrastructure with App Service, Application Gateway, and Azure Database for PostgreSQL for enterprise applications.</li>
+            <li>Installed and managed comprehensive monitoring with Prometheus + Grafana and New Relic for real-time resource and network monitoring.</li>
+            <li>Developed PowerShell automation scripts that eliminated repetitive manual tasks, improving team efficiency and reducing deployment time.</li>
+            <li>Collaborated cross-functionally with development and QA teams to ensure smooth deployments and fast incident resolution.</li>
+          </ul>
+          <div class="timeline-tags">
+            <span>AWS</span><span>Azure</span><span>Prometheus</span><span>Grafana</span><span>New Relic</span><span>PowerShell</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- =====================================================
+     PROJECTS
+===================================================== -->
+<section id="projects">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-tag">07</span>
+      <h2>Key Projects</h2>
+      <div class="section-line"></div>
+    </div>
+    <div class="projects-grid">
+      <div class="project-card featured reveal">
+        <div class="project-card-header">
+          <div class="project-icon">💳</div>
+          <span class="project-badge">Featured</span>
+        </div>
+        <h3>Fintech SaaS Platform</h3>
+        <p class="project-subtitle">Multi-Region AWS &amp; DevSecOps</p>
+        <p class="project-desc">End-to-end AWS infrastructure for a multi-tenant fintech SaaS platform covering payments, e-commerce, and banking workloads — deployed across Singapore and UAE regions.</p>
+        <ul class="project-highlights">
+          <li>Supported bank partner UAT, resolving nginx/CORS/SSL issues on a DMZ proxy</li>
+          <li>Built centralised Trivy + GitHub Actions scanning pipeline with auto-remediation</li>
+          <li>Resolved production incidents across Kubernetes, PostgreSQL SSL/TLS, and Docker Compose</li>
+        </ul>
+        <!-- Infra architecture mini-diagram -->
+        <div class="arch-diagram">
+          <div class="arch-node arch-user">Users</div>
+          <div class="arch-arrow">→</div>
+          <div class="arch-node arch-lb">ELB</div>
+          <div class="arch-arrow">→</div>
+          <div class="arch-node arch-nginx">Nginx</div>
+          <div class="arch-arrow">→</div>
+          <div class="arch-node arch-eks">EKS</div>
+          <div class="arch-arrow">→</div>
+          <div class="arch-node arch-db">RDS</div>
+        </div>
+        <div class="project-tags">
+          <span>AWS</span><span>Multi-Region</span><span>Trivy</span><span>GitHub Actions</span><span>Next.js</span><span>FastAPI</span><span>Kubernetes</span>
+        </div>
+      </div>
+
+      <div class="project-card reveal">
+        <div class="project-card-header"><div class="project-icon">🔊</div></div>
+        <h3>TrueBeep</h3>
+        <p class="project-subtitle">AWS Architecture on EKS</p>
+        <p class="project-desc">Production-grade three-tier architecture on AWS using EC2, RDS, VPC, and EKS for performance, security, and fault tolerance.</p>
+        <ul class="project-highlights">
+          <li>Auto-scaling groups and load balancers for high-traffic spikes</li>
+          <li>Reduced downtime significantly, improving application availability</li>
+        </ul>
+        <div class="project-tags">
+          <span>AWS EKS</span><span>EC2</span><span>RDS</span><span>VPC</span><span>Auto Scaling</span>
+        </div>
+      </div>
+
+      <div class="project-card reveal">
+        <div class="project-card-header"><div class="project-icon">🚗</div></div>
+        <h3>Robi Vehicle Tracker</h3>
+        <p class="project-subtitle">SRE &amp; Infrastructure Maintenance</p>
+        <p class="project-desc">Server health monitoring for a real-time vehicle tracking system serving Robi — a major Bangladeshi telecom — ensuring continuous availability.</p>
+        <ul class="project-highlights">
+          <li>Root cause analysis (RCA) on infrastructure incidents</li>
+          <li>Corrective actions improved uptime and reduced recurrence</li>
+        </ul>
+        <div class="project-tags">
+          <span>Infrastructure</span><span>Monitoring</span><span>RCA</span><span>SRE</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- =====================================================
+     EDUCATION
+===================================================== -->
+<section id="education">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-tag">08</span>
+      <h2>Education</h2>
+      <div class="section-line"></div>
+    </div>
+    <div class="edu-card reveal">
+      <div class="edu-icon">🎓</div>
+      <div class="edu-content">
+        <h3>Bachelor of Science in Computer Science &amp; Engineering</h3>
+        <p class="edu-school">Ahsanullah University of Science &amp; Technology, Dhaka, Bangladesh</p>
+        <p class="edu-date">November 2015 – February 2020</p>
+        <p class="edu-thesis"><strong>Thesis:</strong> Early Depression Detection from Social Networks Using Deep Learning Techniques</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- =====================================================
+     CONTACT
+===================================================== -->
+<section id="contact">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-tag">09</span>
+      <h2>Get In Touch</h2>
+      <div class="section-line"></div>
+    </div>
+    <div class="contact-wrapper">
+      <p class="contact-intro">Open to new opportunities, collaborations, or a good DevOps conversation.</p>
+
+      <a href="Rimon Shil.pdf" download="Rimon_Shil_CV.pdf" class="btn btn-download btn-download-lg">
+        <svg viewBox="0 0 16 16" fill="currentColor" width="16" height="16"><path d="M8 12l-4-4h2.5V3h3v5H12L8 12z"/><path d="M2 14h12v-1.5H2V14z"/></svg>
+        Download My CV
+      </a>
+
+      <div class="contact-cards">
+        <a href="mailto:rimonroy.cse@gmail.com" class="contact-card reveal">
+          <span class="contact-card-icon">✉️</span>
+          <div><p class="contact-card-label">Email</p><p class="contact-card-value">rimonroy.cse@gmail.com</p></div>
+        </a>
+        <a href="https://linkedin.com/in/rimon-shil" target="_blank" rel="noopener" class="contact-card reveal">
+          <span class="contact-card-icon">💼</span>
+          <div><p class="contact-card-label">LinkedIn</p><p class="contact-card-value">linkedin.com/in/rimon-shil</p></div>
+        </a>
+        <a href="tel:+8801839455545" class="contact-card reveal">
+          <span class="contact-card-icon">📱</span>
+          <div><p class="contact-card-label">Phone</p><p class="contact-card-value">+880 1839-455545</p></div>
+        </a>
+        <a href="https://github.com/rimon-shil" target="_blank" rel="noopener" class="contact-card reveal">
+          <span class="contact-card-icon">🐙</span>
+          <div><p class="contact-card-label">GitHub</p><p class="contact-card-value">github.com/rimon-shil</p></div>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <p>Built with ❤️ by Rimon Shil &nbsp;·&nbsp; <span id="year"></span></p>
+    <p class="footer-sub">DevOps Engineer · Dhaka, Bangladesh</p>
+  </div>
+</footer>
+
+<script src="main.js"></script>
+</body>
+</html>
